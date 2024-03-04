@@ -1,2 +1,2 @@
 # Fundamental-Laboratory-Experiment-in-Nuclear-Electronics-II
- 核相关基础实验II
+课程要求手写报告，我开摆了
