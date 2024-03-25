@@ -1,2 +1,3 @@
 # Fundamental-Laboratory-Experiment-in-Nuclear-Electronics-II
-课程要求手写报告，我开摆了
+
+争取到了，不必手写了，可惜我这个学期没什么精力搞这个实验了
