@@ -15,16 +15,18 @@ def peak_fitting(data,prominence,xdata = None ,peak_type='gaussian',
 
     return:
         if plotting == True:
-            return the lmfit.model.ModelResult object, the result of the fitting
+            return a tuple, lmfit.model.ModelResult object, the result of the fitting and the number of peaks
         else:
             return a tuple, the lmfit.model.ModelResult object and ax.
     '''
     import numpy as np
     from scipy.signal import find_peaks
-    if xdata == None:
+    if xdata is None:
         xdata = np.arange(len(data))
+    # print(len(data))
     peaks,info = find_peaks(data,prominence=prominence,**peakfinding_params)
     # print(peaks)
+    # print(info)
     peak_number = len(peaks)
     corrected_left_bases = []
     corrected_right_bases = []
@@ -72,13 +74,12 @@ def peak_fitting(data,prominence,xdata = None ,peak_type='gaussian',
             params[f'V{i}_gamma'].set(value = 0.7,vary=True,min = 0)
 
     fitresult = total_model.fit(data,params,x=xdata)
-
     if plotting:
         print(f'{peak_number} peaks found.')
         if ax == None:
             ax = fitresult.plot_fit(datafmt = '-')
         else:
             fitresult.plot_fit(ax=ax,datafmt = '-')
-        return fitresult,ax
-    return fitresult
-    
+        return fitresult,peak_number,ax
+    else:
+        return fitresult,peak_number
