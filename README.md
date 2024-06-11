@@ -24,7 +24,7 @@
 在实验的过程中我和我的一个朋友找到了一些好用的工具包：
 
 - [livechart API](https://www-nds.iaea.org/relnsd/vcharthtml/api_v0_guide.html):包含了各种核素的信息，例如放射性同为素的半衰期，产生的射线类型和强度，不同衰变道的衰变率等等
-- [lmfit](https://lmfit.github.io/lmfit-py/intro.html):一个专注于曲线拟合的包。内置了常用的峰函数模型。拟合的报告也非常详细，包括拟合参数的值和置信区间、拟合的$\chi^2$量和决定系数 $R^2$ 等，scipy.optimize.curve_fit似乎只提供了参数的值和置信区间，决定系数还要自己算。更关键的，对于内置的模型（文档中叫build-in model）可以自动猜初值！这就太爽了，之前做拟合时候被初值折磨的极度痛苦，origin初值是在包含在用户自建函数的设置里面，也就是同样的函数不同的初值在origin里面算两个用户自建函数！每次调整初值都是二重折磨。
+- [lmfit](https://lmfit.github.io/lmfit-py/intro.html):一个专注于曲线拟合的包。内置了常用的峰函数模型。拟合的报告也非常详细，包括拟合参数的值和置信区间、拟合的 $\chi^2$ 量和决定系数 $R^2$ 等，scipy.optimize.curve_fit似乎只提供了参数的值和置信区间，决定系数还要自己算。更关键的，对于内置的模型（文档中叫build-in model）可以自动猜初值！这就太爽了，之前做拟合时候被初值折磨的极度痛苦，origin初值是在包含在用户自建函数的设置里面，也就是同样的函数不同的初值在origin里面算两个用户自建函数！每次调整初值都是二重折磨。
 - [roentgen](https://roentgen.readthedocs.io/en/latest/index.html):一个X射线相关的Database工具包，包含元素的特征X射线、不同材料的X射线吸收系数等。Documentation也写得非常不错，有很多示例，还兼容[astropy的单位运算](https://docs.astropy.org/en/stable/units/)以及QTable，非常不错。X射线的是原子物理问题不是原子核物理问题，所以livechart API中不会提供X射线的数据。
 - [X-ray DB](https://xraypy.github.io/XrayDB/):也是一个X射线相关的Database工具包，感觉功能比roentgen差一点（roentgen有一个函数可以根据能量范围自动查找可能的特征X射线，而X-ray DB只能调出数据来手动筛选）。不过他们基于元素周期表用tikz做了一个很漂亮的不同元素的特征X射线的的图，它们的documentation里面有[png格式的图](https://xraypy.github.io/XrayDB/periodictable.html#periodic-tables)，在[他们的github仓库的poster目录](https://github.com/xraypy/XrayDB/tree/master/poster)里面可以找到 $\LaTeX$ 源代码。下面这个就是我利用它们的源代码编译导出的pdf，再利用python包`fitz`转成svg的效果[^2]。这张图里面右下角是居里夫人的照片，他们在源代码里面还提供了其它科学家的照片的tex文件。
 
