@@ -30,6 +30,6 @@
 
 [^2]:涉及 $\LaTeX$ 公式的pdf转svg的效果好像大多都不怎么好，很多都存在字体的问题，当然这里面的问题就比较复杂了，我自己也不是很懂。
 
-![Xray-Periodic table](XrayData-with-periodic-table/Xray-Period.svg)
+![Xray-Periodic table](XrayData-with-periodic-table/Xray-Periodic.svg)
 
 最后补充一下，虽然实验I的报告是电子版，但是本课程的报告最初要求是手写。好在经过我去和老师argue，老师同意了使用电子报告。我的第一个实验（实验7）是手写的，所以里面并没有提供电子报告，而且由于我不是很乐意手写报告，这一个实验的分析也做的比较简单。
